@@ -21,7 +21,7 @@ public class PascalTriangle {
     }
 
     public static void main(String[] args) {
-        int row=2;
+        int row=4;
         System.out.println(getRow(row));
     }
 }
