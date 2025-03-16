@@ -4,9 +4,7 @@ public class FindString {
 
 
     public static int firstOcuurIndex(String hay,String n){
-int count=0;
-      int i=hay.indexOf(n);
-      return i;
+        return hay.indexOf(n);
 
     }
 

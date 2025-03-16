@@ -1,33 +1,27 @@
 package Strings;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class LongestAnagram {
 
-    public static List<List<String>> isLongestAnagram(String[] arr) {
+    public static List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
 
-        List<List<String>> list = new ArrayList<>();
-        List<String> l = new ArrayList<>();
+        // Group words by their sorted character representation
+        for (String word : strs) {
+            char[] chars = word.toCharArray();
+            Arrays.sort(chars);
+            String sortedWord = new String(chars);
 
-        HashMap<String, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-
-                int[] charcount = new int[26];
-
-
-            }
+            map.computeIfAbsent(sortedWord, k -> new ArrayList<>()).add(word);
         }
 
-        return list;
+        // Convert map values to a list of lists
+        return new ArrayList<>(map.values());
     }
 
     public static void main(String[] args) {
-        String[]arr={"eat","tea","tan","ate","nat","bat"};
-        System.out.println(isLongestAnagram(arr));
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        System.out.println(groupAnagrams(strs));
     }
 }

@@ -14,7 +14,7 @@ public class generatePascal {
         row.add(1);
         result.add(row);
         List<Integer>prev=row;
-        for (int i=0;i<r;i++){
+        for (int i=1;i<r;i++){
 
            List<Integer>curr=new ArrayList<>();
            curr.add(1);
@@ -33,7 +33,7 @@ public class generatePascal {
     }
 
     public static void main(String[] args) {
-        int r=3;
+        int r=4;
         List<List<Integer>>l=generate(r);
 
         for (List<Integer> row : l) {
