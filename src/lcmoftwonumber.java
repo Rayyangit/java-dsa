@@ -11,7 +11,7 @@ public class lcmoftwonumber {
         int res=1;
 
         for(int i=2;i<=Math.max(a,b);i++){
-            while(a % i==0 || b % i ==0){
+            while (a % i==0 || b % i ==0){
                 res *= i;
                 if(a % i==0) a /= i;
                 if(b % i==0) b /= i;
